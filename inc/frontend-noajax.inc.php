@@ -22,7 +22,7 @@ add_filter( 'the_content', 'bawmrp_the_content', 9 );
 function bawmrp_the_content( $content='' ) {
 	global $post;
 	$bawmrp_options = get_option( 'bawmrp' );
-	if ( ! $post || $bawmrp_options['in_content']!='on' && $content!='' || apply_filters( 'stop_bawmrp', false ) ) {
+	if ( ! $post || $bawmrp_options['in_content_mode']!='on' && $content!='' || apply_filters( 'stop_bawmrp', false ) ) {
 		return $content;
 	}
 	if ( ( is_home() && $bawmrp_options['in_homepage']=='on' && in_the_loop() ) ||
